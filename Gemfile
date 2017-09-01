@@ -17,6 +17,8 @@ gem 'devise-i18n'
 gem 'bootstrap_sb_admin_base_v2'
 #Bootstrap
 gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
+#NotifyJs
+gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'

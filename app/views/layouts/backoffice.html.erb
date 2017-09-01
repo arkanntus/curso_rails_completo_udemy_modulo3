@@ -28,11 +28,29 @@
 </head>
 
 <body>
-
     <div id="wrapper">
-      <%= render partial: "layouts/backoffice_shared/navigation" %>
-      <%= yield %>
+       <%= render partial: "layouts/backoffice_shared/navigation" %>
+       <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <%= yield %>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
     </div>
     <!-- /#wrapper -->
+    <script>
+        <% if notice %>
+           $.notify("<%=notice%>", "success");
+        <% end -%>
+    </script>
+
 </body>
 </html>
