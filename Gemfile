@@ -15,12 +15,17 @@ gem 'devise'
 gem 'devise-i18n'
 #Rails gem of the Bootstrap based admin theme SB Admin 2.
 gem 'bootstrap_sb_admin_base_v2'
-#Bootstrap
-gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
-#NotifyJs
-gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
-#A library for generating fake data such as names, addresses, and phone numbers.
-gem 'faker'
+
+
+source 'https://rails-assets.org' do
+  #Bootstrap
+  gem 'rails-assets-bootstrap', '3.3.7'
+  #NotifyJs
+  gem 'rails-assets-notifyjs'
+  #BootboxJs
+  gem 'rails-assets-bootbox'
+end
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -68,5 +73,8 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  #A library for generating fake data such as names, addresses, and phone numbers.
+  gem 'faker'
 end
 
