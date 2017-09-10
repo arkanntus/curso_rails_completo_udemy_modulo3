@@ -1,9 +1,9 @@
-<h1 class="page-header">Categorias</h1>
+<h1 class="page-header"><%= @categories.model_name.human(count: 2) %></h1>
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        Listando Categorias
-        <%= link_to new_backoffice_category_path, class: "btn btn-success btn-circle pull-right", style: "margin-top: -5px" do %>
+        <%= t('messages.listing', model: @categories.model_name.human(count: 2)) %>
+        <%= link_to new_backoffice_category_path, class:"btn btn-success btn-circle pull-right", style:"margin-top: -5px" do %>
             <i class="fa fa-plus"></i>
         <% end %>
     </div>
@@ -14,14 +14,14 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Descrição</th>
+                        <th><%= @categories.model.human_attribute_name('description') %></th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                  <% @categories.each do |category| %>
+                    <% @categories.each do |category| %>
                     <tr>
-                        <td><%= category.id%></td>
+                        <td><%= category.id %></td>
                         <td><%= category.description %></td>
                         <td style="width: 150px">
                             <%= link_to edit_backoffice_category_path(category), class: "btn btn-primary btn-circle" do %>
@@ -31,7 +31,7 @@
                             </button>
                         </td>
                     </tr>
-                  <% end %>
+                    <% end %>
                 </tbody>
             </table>
         </div>
