@@ -53,14 +53,16 @@ class Backoffice::AdminsController < BackofficeController
     end
 
     def params_admin
-      pwd = params[:admin][:password]
-      pwd_confirmation = params[:admin][:password_confirmation]
-  
-      if pwd.blank? && pwd_confirmation.blank?
+      if password_blank?
         params[:admin].except!(:password, :password_confirmation)
       end
   
       #params.require(:admin).permit(:name, :email, :role, :password, :password_confirmation)
       params.require(:admin).permit(policy(@admin).permitted_attributes)
+    end
+
+    def password_blank?
+      params[:admin][:password] &&
+      params[:admin][:password_confirmation]
     end
 end
