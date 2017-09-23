@@ -6,3 +6,8 @@
     enter: Entrar
     email: E-mail
     password: Senha
+    send_message_to: Enviar mensagem para %{name}
+    new_message: Nova Mensagem
+    recipient: Destinatário
+    subject: Assunto
+    message: Mensagem
