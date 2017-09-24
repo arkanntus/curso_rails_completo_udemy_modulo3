@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170906004719) do
+ActiveRecord::Schema.define(version: 20170924220226) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -38,8 +38,9 @@ ActiveRecord::Schema.define(version: 20170906004719) do
     t.text     "description"
     t.integer  "category_id"
     t.integer  "member_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.integer  "price_cents",             default: 0
   end
 
   add_index "ads", ["category_id"], name: "index_ads_on_category_id"
