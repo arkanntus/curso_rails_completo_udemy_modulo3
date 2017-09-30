@@ -11,7 +11,7 @@ namespace :utils do
     puts %x(rake utils:generate_members) 
     puts %x(rake utils:generate_ads)
 
-    puts "Setupe completado com sucesso!"
+    puts "Setup completado com sucesso!"
   end
 
   ##########################################################################################################
