@@ -22,7 +22,7 @@ gem 'pundit'
 # Integration of RubyMoney - Money with Rails
 gem 'money-rails'
 # Easy file attachment management for ActiveRecord
-gem 'paperclip', '~> 5.0.0'
+gem 'paperclip', '~> 6.0.0'
 
 source 'https://rails-assets.org' do
   #Bootstrap
