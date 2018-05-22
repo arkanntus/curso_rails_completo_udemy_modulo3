@@ -1,5 +1,5 @@
 <h1>Editando anúncio</h1>
-<%= form_for([:site, :profile, @ad]) do |f| %>
+<%= form_for([:site, :profile, @ad], html: { multipart: true }) do |f| %>
     <div class="row">
         <div class="col-xs-6">
             <div class="form-group">
