@@ -3,7 +3,7 @@
 <div class="card-body">
     <h3> <%= @ad.title %></h3>
     <h4><%= humanized_money_with_symbol @ad.price %></h4>
-    <p class="card-text"><%= @ad.description %></p>
+    <p class="card-text"><%= md_to_html @ad.description %></p>
     <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
     4.0 stars
 </div>
