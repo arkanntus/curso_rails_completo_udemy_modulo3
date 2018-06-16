@@ -65,8 +65,16 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="form-group">
-                <%= f.label :description %>
-                <%= f.text_area :description, class:"form-control", rows: 10 %>
+                <%= f.label :description_short %>
+                <%= f.text_area :description_short, class:"form-control", rows: 5 %>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="form-group">
+                <%= f.label :description_md %>
+                <%= f.text_area :description_md, class:"form-control", rows: 10 %>
             </div>
         </div>
     </div>
@@ -78,7 +86,7 @@
                         Pré-visualização
                     </div>
                     <div class="panel-body">
-                        <p><%= md_to_html @ad.description %></p>
+                        <p><%= @ad.description.html_safe %></p>
                     </div>
                 </div>
             </div>
