@@ -3,7 +3,7 @@ class Ad < ActiveRecord::Base
   before_save :md_to_html
 
   #associations
-  belongs_to :category
+  belongs_to :category, counter_cache: true
   belongs_to :member
 
   #validates
