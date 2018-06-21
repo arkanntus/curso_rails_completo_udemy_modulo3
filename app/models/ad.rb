@@ -8,6 +8,7 @@ class Ad < ActiveRecord::Base
   #associations
   belongs_to :category, counter_cache: true
   belongs_to :member
+  has_many :comments
 
   #validates
   validates :title, :description_md, :description_short, :category, :picture, :finish_date, presence: true
