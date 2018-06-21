@@ -57,8 +57,10 @@
     <!-- /.container -->
 
     <%= render partial: "layouts/site_shared/footer" %>
-    
+        
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'site' %>
+    
+    <%= render partial: 'layouts/shared/notifications' %>
   </body>
 </html>
