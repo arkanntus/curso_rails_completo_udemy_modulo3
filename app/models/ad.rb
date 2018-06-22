@@ -33,7 +33,7 @@ class Ad < ActiveRecord::Base
       where("lower(title) LIKE ?", "%#{q.downcase}%").page(page).per(QTT_PER_PAGE)
   }
   scope :to_the, ->(member) { where(member: member) }
-  scope :by_category, ->(id) { where(category: id) }
+  scope :by_category, ->(id, page) { where(category: id).page(page).per(QTT_PER_PAGE) }
 
   private
     def md_to_html
