@@ -1,19 +1,15 @@
-<div class="card mt-4">
-<%= image_tag @ad.picture.url(:large), class:"card-img-top img-fluid" %>
-<div class="card-body">
-    <h3> <%= @ad.title %></h3>
-    <h4><%= humanized_money_with_symbol @ad.price %></h4>
-    <p class="card-text"><%= @ad.description.html_safe %></p>
-    <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-    4.0 stars
+<div class="thumbnail">
+    <%= image_tag @ad.picture.url(:large), class:"img-reponsive" %>
+    <div class="caption-full">
+        <h4 class=pull-right><%= humanized_money_with_symbol @ad.price %></h4>
+        <h4> <a href="#"><%= @ad.title %></a></h4>
+        <%= @ad.description.html_safe %>
+    </div>
+    <div class="ratings">
+        <%= rating_for @ad, 'quality', disable_after_rate: true %>
+    </div>
 </div>
-</div>
-<!-- /.card -->
 
-<div class="card card-outline-secondary my-4">
-<div class="card-header">
-    Product Reviews
-</div>
 <div class="well">
     <% if member_signed_in? %>
       <div class="text-right">

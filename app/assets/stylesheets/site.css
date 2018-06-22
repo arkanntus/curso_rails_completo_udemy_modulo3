@@ -28,8 +28,8 @@
     white-space: nowrap;
 }
 
-.thumbnail img {
-    width: 100%;
+.star img {
+    width: 15px;
 }
 
 .ratings {
