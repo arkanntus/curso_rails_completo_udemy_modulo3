@@ -1,0 +1,8 @@
+# Aqui ficarão as traduções i18n usados em mensagens
+
+'pt-BR':
+  profile_menu:
+    new_ad: Novo anúncio
+    my_ads: Meus anúncios
+    dashboard: Dashboard
+    my_data: Meus dados
