@@ -27,7 +27,10 @@ Rails.application.routes.draw do
   end
 
   devise_for :admins, :skip => [:registrations] #Removendo possibilidade de registro de Admins
-  devise_for :members, controllers: { sessions: 'members/sessions' }
+  devise_for :members, controllers: { 
+    sessions: 'members/sessions',
+    registrations: 'members/registrations'
+  }
 
   root 'site/home#index'
 

@@ -14,7 +14,6 @@ class Site::Profile::MyDataController < Site::ProfileController
   end
 
   private
-
     def set_profile_member
       @profile_member = ProfileMember.find_or_create_by(member_id: current_member.id)
     end
