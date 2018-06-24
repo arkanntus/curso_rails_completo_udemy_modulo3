@@ -35,6 +35,8 @@ class Ad < ActiveRecord::Base
   scope :to_the, ->(member) { where(member: member) }
   scope :by_category, ->(id, page) { where(category: id).page(page).per(QTT_PER_PAGE) }
 
+  scope :random, -> (quantity) { limit(quantity).order("RANDOM()") }
+
   private
     def md_to_html
       options = {
