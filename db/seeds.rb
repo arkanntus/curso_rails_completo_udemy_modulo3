@@ -39,10 +39,18 @@ puts "Administrador cadastrado com sucesso!"
 ###############################################################################
 
 puts "Cadastrando o Membro Padrão..."
-  Member.create!(
-                email:"membro@membro.com",
-                password: "123456",
-                password_confirmation: "123456"
-                )
+  member = Member.new(
+                  email:"membro@membro.com",
+                  password: "123456",
+                  password_confirmation: "123456"
+                  )
+                  
+  member.build_profile_member
+
+  profile = member.profile_member
+  profile.first_name = Faker::Name.first_name
+  profile.second_name = Faker::Name.last_name
+
+  member.save!
 
 puts "Membro cadastrado com sucesso!"
