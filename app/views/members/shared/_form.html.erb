@@ -1,4 +1,3 @@
-<%=  %>
 <div class="container">    
     <div id="loginbox" style="<%= devise_sign_in? %> margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
         <div class="panel panel-info" >
@@ -43,7 +42,7 @@
 
                                 <div class="col-sm-12 controls">
                                   <%= f.submit "Entrar", class: "btn btn-success" %>
-                                  <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>
+                                  <a id="btn-fblogin" href="#" class="btn btn-primary" disabled="disabled">Login with Facebook</a>
 
                                 </div>
                             </div>
@@ -74,13 +73,6 @@
                     </div>  
                     <div class="panel-body" >
                         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class:"form-horizontal", role:"form"}) do |f| %>
-                            <% unless devise_error_messages!.blank? %>
-                              <div id="signupalert" class="alert alert-danger">
-                                  <p><%= devise_error_messages! %></p>
-                                  <span></span>
-                              </div>
-                            <% end%>
-                              
                             <div class="form-group">
                                 <%= f.label :email, class:"col-md-3 control-label" %>
                                 <div class="col-md-9">
@@ -131,3 +123,13 @@
             
       </div> 
 </div>
+
+<% flash.each do |key, value| %>
+  <%= javascript_tag " $.notify({ message: '#{value}' }, {type: 'danger', placement: {from: 'top', align: 'center'} } );" %>
+  <% end %>
+  
+<% unless devise_error_messages!.blank? %>
+  <% resource.errors.full_messages.each do |message| %>
+    <%= javascript_tag " $.notify({ message: '#{message}' }, {type: 'danger', placement: {from: 'top', align: 'center'} } );" %>
+  <% end %>
+<% end %>
