@@ -50,3 +50,7 @@
 footer {
     margin: 50px 0;
 }
+
+p#time-ago {
+    margin-bottom: -4px;
+}
