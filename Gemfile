@@ -109,6 +109,9 @@ group :development do
   gem 'lerolero_generator'
   
   #Catches mail and serves it through a dream.
-gem 'mailcatcher'
+  gem 'mailcatcher'
+
+  # Prawn Handler for Rails. Handles and registers pdf formats.
+  gem 'prawn-rails'
 end
 
